@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="875.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.magaz.HelloController">
+   <children>
+      <BorderPane prefHeight="875.0" prefWidth="1250.0">
+         <top>
+            <Pane prefHeight="83.0" prefWidth="1012.0" style="-fx-background-color: #65E080; -fx-border-color: #CFCFCF;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="bb" layoutX="1087.0" layoutY="31.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="149.0" style="-fx-border-color: #A61000; -fx-background-color: #206876;" text="Обновить" textFill="#65e080" />
+                  <Button fx:id="openCreatePane" layoutX="929.0" layoutY="31.0" mnemonicParsing="false" onAction="#openMenuCreatePane" prefHeight="38.0" prefWidth="148.0" style="-fx-background-color: #206876; -fx-border-color: #A61000;" text="Добавить товар" textFill="#65e080">
+                     <graphic>
+                        <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="24.0" layoutY="662.0" pickOnBounds="true" preserveRatio="true" />
+                     </graphic>
+                  </Button>
+                  <Button fx:id="openCreatePanePostavschik" layoutX="771.0" layoutY="31.0" mnemonicParsing="false" onAction="#openMenuCreatePanePostavschik" prefHeight="38.0" prefWidth="148.0" style="-fx-border-color: #A61000; -fx-background-color: #206876;" text="Добавить поставщика" textFill="#65e080" />
+                  <Button fx:id="openEditPane" layoutX="612.0" layoutY="31.0" mnemonicParsing="false" onAction="#openMenuEditPane" prefHeight="38.0" prefWidth="148.0" style="-fx-border-color: #A61000; -fx-background-color: #206876;" text="Редактировать" textFill="#65e080" />
+               </children></Pane>
+         </top>
+         <left>
+            <Pane fx:id="upMenu" prefHeight="846.0" prefWidth="200.0" style="-fx-border-color: #CFCFCF; -fx-background-color: #DEDEDE;" BorderPane.alignment="CENTER">
+               <children>
+                  <Button fx:id="PostavButMenu" mnemonicParsing="false" onAction="#openMenuPostavButMenu" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #206876; -fx-border-color: #BF3D30;" text="Поставщики" textFill="#65e080" />
+                  <Button fx:id="salesButMenu" layoutY="47.0" mnemonicParsing="false" onAction="#openMenusalesButMenu" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #206876; -fx-border-color: #A61000;" text="Продажи" textFill="#65e080" />
+                  <Button fx:id="rpoductButMenu" layoutY="94.0" mnemonicParsing="false" onAction="#openMenurpoductButMenu" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #206876; -fx-border-color: #BF3D30;" text="Товары" textFill="#65e080" />
+                  <Button fx:id="сompanyButMenu" layoutY="141.0" mnemonicParsing="false" onAction="#openMenuсompanyButMenu" prefHeight="47.0" prefWidth="200.0" style="-fx-background-color: #206876; -fx-border-color: #A61000;" text="О компании" textFill="#65e080" />
+                  <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="24.0" layoutY="662.0" pickOnBounds="true" preserveRatio="true" />
+               </children>
+            </Pane>
+         </left>
+         <center>
+            <Group BorderPane.alignment="CENTER">
+               <children>
+                  <Pane fx:id="product" prefHeight="780.0" prefWidth="1043.0">
+                     <children>
+                        <TabPane prefHeight="772.0" prefWidth="1017.0" tabClosingPolicy="UNAVAILABLE">
+                          <tabs>
+                            <Tab text="Строительные материалы">
+                              <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                       <children>
+                                          <ScrollPane fx:id="scrolPaneMat" prefHeight="772.0" prefWidth="1018.0">
+                                            <content>
+                                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+                                            </content>
+                                          </ScrollPane>
+                                       </children></AnchorPane>
+                              </content>
+                            </Tab>
+                          </tabs>
+                        </TabPane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="comapny" prefHeight="780.0" prefWidth="1045.0" visible="false" />
+                  <Pane fx:id="change" prefHeight="779.0" prefWidth="1044.0" visible="false">
+                     <children>
+                        <Pane layoutX="347.0" layoutY="31.0" prefHeight="335.0" prefWidth="350.0" style="-fx-background-color: #F5F5F5; -fx-background-color: #CFCFCF;">
+                           <children>
+                              <ImageView fx:id="imageEditPane" fitHeight="335.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </Pane>
+                        <Button fx:id="addImageEdit" layoutX="347.0" layoutY="377.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Загрузить фотографию" textFill="#65e080" />
+                        <TextField fx:id="TFeditElemName" layoutX="447.0" layoutY="440.0" promptText="Название продукции" />
+                        <TextField fx:id="TFeditElemKolVo" layoutX="448.0" layoutY="473.0" promptText="Количество" />
+                        <TextField fx:id="TFeditElemPrise" layoutX="448.0" layoutY="505.0" promptText="Цена" />
+                        <TextField fx:id="TFeditElemKratOpis" layoutX="447.0" layoutY="538.0" promptText="Краткое описание" />
+                        <ComboBox fx:id="VidDeleteEdit" layoutX="347.0" layoutY="609.0" prefWidth="150.0" promptText="Вид" />
+                        <Button fx:id="editForBD" layoutX="471.0" layoutY="676.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="100.0" text="Изменить" textFill="#65e080">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deleteBut" layoutX="482.0" layoutY="714.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" text="Удалить" textFill="#65e080" />
+                        <Button fx:id="loadPr" layoutX="547.0" layoutY="377.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Загрузить товар" textFill="#65e080" />
+                        <Button fx:id="deleteVidBut" layoutX="446.0" layoutY="642.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="150.0" text="Удалить вид" textFill="#65e080" />
+                        <ComboBox fx:id="CBSclad" layoutX="447.0" layoutY="571.0" prefWidth="150.0" promptText="Склад" />
+                        <ComboBox fx:id="CBPostav" layoutX="547.0" layoutY="609.0" prefWidth="150.0" promptText="Поставщик" />
+                        <ComboBox fx:id="CBProduct" layoutX="447.0" layoutY="409.0" prefWidth="150.0" promptText="Товар" />
+                     </children>
+                  </Pane>
+                  <Pane fx:id="CreateElemPane" prefHeight="778.0" prefWidth="1042.0" visible="false">
+                     <children>
+                        <Pane fx:id="paneForCreateElements" layoutX="311.0" layoutY="39.0" prefHeight="701.0" prefWidth="421.0" visible="false">
+                           <children>
+                              <Button fx:id="writinForBD" layoutX="140.0" layoutY="625.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="118.0" text="Добавить" textFill="#65e080" />
+                              <TextField fx:id="TFcreateElemKrOpisa" layoutX="128.0" layoutY="487.0" prefHeight="25.0" prefWidth="143.0" promptText="Краткое описание" />
+                              <Pane layoutX="25.0" layoutY="12.0" prefHeight="335.0" prefWidth="350.0" style="-fx-background-color: #F5F5F5; -fx-border-color: #CFCFCF;">
+                                 <children>
+                                    <ImageView fx:id="imageCreatePane" fitHeight="335.0" fitWidth="350.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </Pane>
+                              <Button fx:id="addImage" layoutX="128.0" layoutY="353.0" mnemonicParsing="false" text="Загрузить фотографию" textFill="#65e080" />
+                              <TextField fx:id="TFcreateElemName" layoutX="129.0" layoutY="388.0" prefHeight="25.0" prefWidth="143.0" promptText="Название продукции" />
+                              <TextField fx:id="TFcreateElemPrise" layoutX="129.0" layoutY="454.0" prefHeight="25.0" prefWidth="143.0" promptText="Цена" />
+                              <TextField fx:id="TFcreateElemKolVo" layoutX="128.0" layoutY="421.0" prefHeight="25.0" prefWidth="144.0" promptText="Количество" />
+                              <ComboBox fx:id="CBcreteElemVid" layoutX="124.0" layoutY="521.0" prefWidth="150.0" promptText="Вид" />
+                              <ComboBox fx:id="CBcreteElemPostavsch" layoutX="124.0" layoutY="590.0" prefWidth="150.0" promptText="Поставщик" />
+                              <ComboBox fx:id="CBcreteElemSkla" layoutX="124.0" layoutY="556.0" prefWidth="150.0" promptText="Склад" />
+                           </children>
+                        </Pane>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="dobavpostav" prefHeight="781.0" prefWidth="1046.0" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Добавить поставщика">
+                           <font>
+                              <Font size="22.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="62.0" text="Основные данные">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="101.0" text="Электронная почта">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="200.0" layoutY="101.0" text="Телефон">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfEmail" layoutX="13.0" layoutY="132.0" prefHeight="25.0" prefWidth="144.0" />
+                        <TextField fx:id="tfTelepfone" layoutX="201.0" layoutY="132.0" />
+                        <Label layoutX="15.0" layoutY="175.0" text="Контактное лицо">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="13.0" layoutY="214.0" text="Фамилия">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="201.0" layoutY="214.0" text="Имя">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="391.0" layoutY="216.0" text="Отчество">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfLastName" layoutX="11.0" layoutY="246.0" />
+                        <TextField fx:id="tfName" layoutX="199.0" layoutY="245.0" prefHeight="26.0" prefWidth="149.0" />
+                        <TextField fx:id="tfSurname" layoutX="391.0" layoutY="246.0" />
+                        <Label layoutX="13.0" layoutY="300.0" text="Реквизиты">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="15.0" layoutY="344.0" text="Название компании">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="199.0" layoutY="348.0" text="ИНН">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="391.0" layoutY="348.0" text="КПП">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfNameCompany" layoutX="11.0" layoutY="380.0" />
+                        <TextField fx:id="tfINN" layoutX="199.0" layoutY="380.0" />
+                        <TextField fx:id="tfKPP" layoutX="391.0" layoutY="380.0" />
+                        <Label layoutX="11.0" layoutY="425.0" text="Банк">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="200.0" layoutY="425.0" text="Корр. счёт">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="tfBank" layoutX="11.0" layoutY="459.0" />
+                        <TextField fx:id="tfKorrS" layoutX="199.0" layoutY="459.0" />
+                        <Button fx:id="butSave" layoutX="11.0" layoutY="510.0" mnemonicParsing="false" text="Сохранить" textFill="#65e080">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="tablPostav" prefHeight="782.0" prefWidth="1048.0" visible="false">
+                     <children>
+                        <TableView fx:id="tbViewPostav" layoutX="-1.0" prefHeight="782.0" prefWidth="1048.0">
+                          <columns>
+                            <TableColumn fx:id="tbID" prefWidth="40.0" text="ID" />
+                            <TableColumn fx:id="tbLastName" prefWidth="109.0" text="Фамилия" />
+                              <TableColumn fx:id="tbName" prefWidth="95.0" text="Имя" />
+                              <TableColumn fx:id="tbSurName" prefWidth="85.0" text="Отчество" />
+                              <TableColumn fx:id="tbEmail" prefWidth="147.0" text="Электронная почта" />
+                              <TableColumn fx:id="tbTelephon" prefWidth="93.0" text="Телефон" />
+                              <TableColumn fx:id="tbNameCompany" prefWidth="136.0" text="Название компании" />
+                              <TableColumn fx:id="tbBank" prefWidth="86.0" text="Банк" />
+                              <TableColumn fx:id="tbINN" prefWidth="83.0" text="Инн" />
+                              <TableColumn fx:id="tbKPP" minWidth="5.0" text="КПП" />
+                              <TableColumn fx:id="tbKorr" prefWidth="93.0" text="Корр. счёт" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+                  <Pane fx:id="salePane" prefHeight="782.0" prefWidth="1048.0">
+                     <children>
+                        <Pane layoutX="7.0" layoutY="111.0" prefHeight="464.0" prefWidth="543.0" style="-fx-border-color: #CFCFCF;">
+                           <children>
+                              <Pane layoutX="14.0" layoutY="105.0" prefHeight="340.0" prefWidth="516.0" style="-fx-border-color: #CFCFCF;">
+                                 <children>
+                                    <Pane layoutX="12.0" layoutY="14.0" prefHeight="316.0" prefWidth="287.0" style="-fx-border-color: #CFCFCF;">
+                                       <children>
+                                          <ImageView fx:id="imgAddFromOrder" fitHeight="316.0" fitWidth="287.0" pickOnBounds="true" preserveRatio="true" />
+                                       </children></Pane>
+                                    <Label fx:id="nameFromOrder" layoutX="306.0" layoutY="14.0" text="Название:" textFill="#65e080">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="priseFromOrder" layoutX="306.0" layoutY="41.0" text="Цена:" textFill="#65e080">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="kolVoFromOrder" layoutX="306.0" layoutY="66.0" text="Осталось на складе:" textFill="#65e080">
+                                       <font>
+                                          <Font size="18.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane layoutX="311.0" layoutY="99.0" prefHeight="128.0" prefWidth="178.0" style="-fx-border-color: #CFCFCF;">
+                                       <children>
+                                          <ComboBox fx:id="CBsalesPaneVid" layoutX="14.0" layoutY="14.0" prefWidth="150.0" promptText="Вид" />
+                                          <ComboBox fx:id="CBsalesPaneProd" layoutX="14.0" layoutY="87.0" prefWidth="150.0" promptText="Товар" />
+                                       </children>
+                                    </Pane>
+                                    <TextField fx:id="tfAddToOrderkolVo" layoutX="326.0" layoutY="268.0" promptText="Количество" />
+                                    <Button layoutX="312.0" layoutY="305.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="176.0" text="Добавить заказ" textFill="#65e080" />
+                                    <TextField fx:id="tfKratkOpis" layoutX="326.0" layoutY="236.0" promptText="Краткое описание" />
+                                 </children>
+                              </Pane>
+                              <TextField fx:id="tfSearchProd" layoutX="14.0" layoutY="14.0" promptText="Поиск" />
+                              <Label layoutX="14.0" layoutY="45.0" text="Результат поиска:" textFill="#65e080" />
+                              <Button layoutX="14.0" layoutY="70.0" mnemonicParsing="false" text="Загрузить результат поиска" textFill="#65e080" />
+                           </children>
+                        </Pane>
+                        <Label layoutX="14.0" layoutY="70.0" text="Продажа товара" textFill="#65e080">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Pane layoutX="568.0" layoutY="111.0" prefHeight="458.0" prefWidth="469.0" style="-fx-border-color: #CFCFCF;">
+                           <children>
+                              <TableView fx:id="tbViewOrderStr" layoutY="58.0" prefHeight="405.0" prefWidth="469.0">
+                                <columns>
+                                  <TableColumn fx:id="tbCollumnID" prefWidth="65.0" text="ID" />
+                                  <TableColumn fx:id="tbCollumnName" prefWidth="99.0" text="Название" />
+                                    <TableColumn fx:id="tbCollumnKolVo" prefWidth="97.0" text="Количество" />
+                                    <TableColumn fx:id="tbCollumnPrise" prefWidth="68.0" text="Цена" />
+                                    <TableColumn fx:id="tbCollumnKratkoeOp" prefWidth="139.0" text="Краткое описание" />
+                                </columns>
+                              </TableView>
+                              <TextField fx:id="tfIDdelite" layoutX="14.0" layoutY="24.0" promptText="ID товара" />
+                              <Button layoutX="174.0" layoutY="24.0" mnemonicParsing="false" text="Удалить элемент" textFill="#65e080" />
+                              <Button layoutX="295.0" layoutY="24.0" mnemonicParsing="false" text="Провести операцию" textFill="#65e080" />
+                           </children>
+                        </Pane>
+                        <Label layoutX="568.0" layoutY="70.0" text="Заказ" textFill="#65e080">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="14.0" layoutY="582.0" text="Завершённые заказы" textFill="#65e080">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tbViewFinish" layoutY="612.0" prefHeight="171.0" prefWidth="1048.0">
+                          <columns>
+                            <TableColumn fx:id="tbNumOrder" prefWidth="196.0" text="№Заказа" />
+                            <TableColumn fx:id="tbDateAndTimeOrder" prefWidth="388.0" text="Дата" />
+                              <TableColumn fx:id="tbGenPrise" prefWidth="463.0" text="Общая стоимость" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </Pane>
+               </children>
+            </Group>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
